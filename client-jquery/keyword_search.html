@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>O*NET Web Services Keyword Search Demo</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <script src="OnetWebService.js"></script>
+    <script src="keyword_search.js"></script>
+  </head>
+  <body>
+  <div class="container-fluid p-4">
+  
+    <h1 class="mb-4">Keyword Search Demo</h1>
+    
+    <form id="accountForm">
+      <div class="form-group" style="max-width: 500px">
+        <label for="accountName">O*NET Web Services username</label>
+        <input type="text" class="form-control" id="accountName" aria-describedby="accountNameHelp" placeholder="my_account_name">
+        <small id="accountNameHelp">You must register the domain “<span id="domainOrigin">(not loaded)</span>” in <a target="_blank" href="https://services.onetcenter.org/developer/editorigin">My Account</a></small>
+      </div>
+      <button type="submit" id="accountConnect" class="btn btn-primary">Connect</button>
+    </form>
+    
+    <div id="connectSuccess">
+      <div id="connectPanel" class="alert alert-primary my-3">
+        Connected to O*NET Web Services version <span id="connectVersion"></span>
+      </div>
+      
+      <form id="searchForm">
+        <div class="form-group" style="max-width: 500px">
+          <label for="searchQuery">Keyword search query</label>
+          <input type="text" class="form-control" id="searchQuery" placeholder="dental assistant"></input>
+        </div>
+        <button type="submit" id="searchSubmit" class="btn btn-primary">Search</button>
+      </form>
+      
+      <div id="searchSuccess">
+        <div id="searchNoResults" class="alert alert-warning my-3">
+          No relevant occupations were found.
+        </div>
+        <div id="searchResults" class="my-3">
+          <p>
+            Most relevant occupations for “<span id="searchQueryEcho"></span>”:
+          </p>
+          <ul>
+            <li id="searchItem0"><span id="searchCode0"></span> &#8212; <span id="searchTitle0"></span></li>
+            <li id="searchItem1"><span id="searchCode1"></span> &#8212; <span id="searchTitle1"></span></li>
+            <li id="searchItem2"><span id="searchCode2"></span> &#8212; <span id="searchTitle2"></span></li>
+            <li id="searchItem3"><span id="searchCode3"></span> &#8212; <span id="searchTitle3"></span></li>
+            <li id="searchItem4"><span id="searchCode4"></span> &#8212; <span id="searchTitle4"></span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    <div id="errorPanel" class="alert alert-danger my-3">
+      <span id="errorMessage"></span>
+    </div>
+  </div>
+  
+  </body>
+</html>

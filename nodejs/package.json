@@ -1,0 +1,22 @@
+{
+  "name": "web-services-samples-nodejs",
+  "version": "1.0.0",
+  "description": "Sample code using O*NET Web Services API",
+  "main": "keyword_search.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/onetcenter/web-services-samples.git"
+  },
+  "author": "National Center for O*NET Development",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/onetcenter/web-services-samples/issues"
+  },
+  "homepage": "https://github.com/onetcenter/web-services-samples/tree/master/nodejs#readme",
+  "dependencies": {
+    "axios": "^0.18.0"
+  }
+}
