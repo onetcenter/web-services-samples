@@ -1,6 +1,8 @@
 # C# Code Samples for O\*NET Web Services
 
-`KeywordSearch.cs` is a console app which demonstrates the occupation keyword search. `KeywordSearch.sln` and `KeywordSearch.csproj` are Visual Studio files for compiling the application.
+`BatchCoder.cs` is a non-interactive console app which codes a JSON file of job titles to O*NET-SOC occupations. `BatchCoder.sln` and `BatchCoder.csproj` are Visual Studio files for compiling the application.
+
+`KeywordSearch.cs` is an interactive console app which demonstrates the occupation keyword search. `KeywordSearch.sln` and `KeywordSearch.csproj` are Visual Studio files for compiling the application.
 
 `OnetWebService.cs` is a utility class you may use in your own applications.
 
@@ -14,9 +16,21 @@ Change to the C# directory:
 
     cd web-services-samples/csharp-dotnet
 
+### Interactive keyword search example
+
 Open the `KeywordSearch.sln` file with Visual Studio, and build and run the application.
 
 Follow the prompts to enter your O*NET Web Services credentials, and your search terms.
+
+### Batch coding example
+
+Make a copy of the file `BatchCoder_sample_input.json`, and add your O*NET Web Services credentials. For more information on the file format, see the [batch coder documentation](BatchCoder_README.md).
+
+Open the `BatchCoder.sln` file with Visual Studio, and build the application. Run the application at a command prompt, with your edited copy of the sample input:
+
+    BatchCoder.exe < BatchCoder_input_copy.json > BatchCoder_output.json
+    
+The file `BatchCoder_output.json` will contain the results.
 
 ## License
 

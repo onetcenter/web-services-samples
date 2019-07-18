@@ -1,6 +1,8 @@
 # Ruby Code Samples for O\*NET Web Services
 
-`keyword_search.rb` is a command-line program which demonstrates the occupation keyword search.
+`batch_coder.rb` is a non-interactive command-line program which codes a JSON file of job titles to O*NET-SOC occupations.
+
+`keyword_search.rb` is an interactive command-line program which demonstrates the occupation keyword search.
 
 `OnetWebService.rb` is a utility class you may use in your own applications.
 
@@ -14,11 +16,23 @@ Change to the Ruby directory:
 
     cd web-services-samples/ruby
 
+### Interactive keyword search example
+
 Run the keyword search example:
 
     ruby keyword_search.rb
 
 Follow the prompts to enter your O*NET Web Services credentials, and your search terms.
+
+### Batch coding example
+
+Make a copy of the file `batch_coder_sample_input.json`, and add your O*NET Web Services credentials. For more information on the file format, see the [batch coder documentation](batch_coder_README.md).
+
+Run the batch coder example with your edited copy of the sample input:
+
+    ruby batch_coder.rb < batch_coder_input_copy.json > batch_coder_output.json
+    
+The file `batch_coder_output.json` will contain the results.
 
 ## License
 

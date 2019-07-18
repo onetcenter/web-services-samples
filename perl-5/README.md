@@ -1,6 +1,8 @@
 # Perl 5 Code Samples for O\*NET Web Services
 
-`keyword_search.pl` is a command-line program which demonstrates the occupation keyword search.
+`batch_coder.pl` is a non-interactive command-line program which codes a JSON file of job titles to O*NET-SOC occupations.
+
+`keyword_search.pl` is an interactive command-line program which demonstrates the occupation keyword search.
 
 `Local/OnetWebService.pm` is a Perl module you may use in your own applications.
 
@@ -19,12 +21,23 @@ Change to the Perl directory:
 
     cd web-services-samples/perl-5
 
+### Interactive keyword search example
+
 Run the keyword search example:
 
     perl keyword_search.pl
 
-Follow the prompts to enter your O\*NET Web Services credentials, and your search terms.
+Follow the prompts to enter your O*NET Web Services credentials, and your search terms.
 
+### Batch coding example
+
+Make a copy of the file `batch_coder_sample_input.json`, and add your O*NET Web Services credentials. For more information on the file format, see the [batch coder documentation](batch_coder_README.md).
+
+Run the batch coder example with your edited copy of the sample input:
+
+    perl batch_coder.pl < batch_coder_input_copy.json > batch_coder_output.json
+    
+The file `batch_coder_output.json` will contain the results.
 
 ## License
 

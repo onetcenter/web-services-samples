@@ -1,6 +1,8 @@
 # Python 3 Code Samples for O\*NET Web Services
 
-`keyword_search.py` is a command-line program which demonstrates the occupation keyword search.
+`batch_coder.py` is a non-interactive command-line program which codes a JSON file of job titles to O*NET-SOC occupations.
+
+`keyword_search.py` is an interactive command-line program which demonstrates the occupation keyword search.
 
 `OnetWebService.py` is a utility class you may use in your own applications.
 
@@ -14,11 +16,23 @@ Change to the Python directory:
 
     cd web-services-samples/python-3
 
+### Interactive keyword search example
+
 Run the keyword search example:
 
     python3 keyword_search.py
 
 Follow the prompts to enter your O*NET Web Services credentials, and your search terms.
+
+### Batch coding example
+
+Make a copy of the file `batch_coder_sample_input.json`, and add your O*NET Web Services credentials. For more information on the file format, see the [batch coder documentation](batch_coder_README.md).
+
+Run the batch coder example with your edited copy of the sample input:
+
+    python3 batch_coder.py < batch_coder_input_copy.json > batch_coder_output.json
+    
+The file `batch_coder_output.json` will contain the results.
 
 ## License
 

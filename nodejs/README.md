@@ -1,6 +1,8 @@
 # NodeJS Code Samples for O\*NET Web Services
 
-`keyword_search.js` is a command-line program which demonstrates the occupation keyword search.
+`batch_coder.js` is a non-interactive command-line program which codes a JSON file of job titles to O*NET-SOC occupations.
+
+`keyword_search.js` is an interactive command-line program which demonstrates the occupation keyword search.
 
 `OnetWebService.js` is a utility class you may use in your own applications.
 
@@ -18,11 +20,23 @@ Install dependencies:
 
     npm install
 
+### Interactive keyword search example
+
 Run the keyword search example:
 
     node keyword_search.js
 
 Follow the prompts to enter your O*NET Web Services credentials, and your search terms.
+
+### Batch coding example
+
+Make a copy of the file `batch_coder_sample_input.json`, and add your O*NET Web Services credentials. For more information on the file format, see the [batch coder documentation](batch_coder_README.md).
+
+Run the batch coder example with your edited copy of the sample input:
+
+    node batch_coder.js < batch_coder_input_copy.json > batch_coder_output.json
+    
+The file `batch_coder_output.json` will contain the results.
 
 ## License
 
