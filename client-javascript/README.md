@@ -4,7 +4,7 @@
 
 `keyword_search.js` provides the JavaScript code used in `keyword_search.html`.
 
-`OnetWebService.js` is a utility class you may use in your own applications.
+`OnetWebService.js` is a utility class you may use in your own applications. This class, which is used by the keyword search example, uses the `fetch` API (in supported browsers) or `XMLHttpRequest` to connect to O\*NET Web Services.
 
 ## Running the example
 
