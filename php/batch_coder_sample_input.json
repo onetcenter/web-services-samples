@@ -1,11 +1,11 @@
-{ "config": {
-    "username": "center_internal",
-    "password": "9941hst",
-    "max_results": 5
-  },
-  "queries": [
-    "Structural Engineer",
-    "Receptionist",
-    "Senior IT Manager"
-  ]
-}
+ { "config": {
+     "username": "my_web_services_username",
+     "password": "my_web_services_password",
+     "max_results": 3
+   },
+   "queries": [
+     "Structural Engineer",
+     "Receptionist",
+     "Senior IT Manager"
+   ]
+ }
