@@ -27,6 +27,12 @@ This sample code is licensed under the terms of the MIT license (see the `LICENS
 
 **Note:** O\*NET Web Services account holders must follow the [Terms of Service](https://services.onetcenter.org/terms) and [Data License](https://services.onetcenter.org/help/license_data) when calling the Services.
 
+## Third-party code samples
+
+Developers may also be interested in the following source code projects which use O\*NET Web Services. These projects are not created, maintained, or endorsed by the O\*NET Center.
+
+* [ONETr](https://github.com/eknud/ONETr) – A small R package for interacting with the O*NET API.
+
 ## Contact
 
 For problems or suggestions related specifically to this sample code, please use [Issues](https://github.com/onetcenter/web-services-samples/issues/). For all other questions about O\*NET Web Services, including problems with your account, contact [O\*NET Customer Service](mailto:onet@onetcenter.org).
