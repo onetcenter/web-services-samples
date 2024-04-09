@@ -8,7 +8,7 @@ As a REST API, O\*NET Web Services may be called from any language using standar
 
 ### Server-side languages
 
-* C# (.NET Core 2.0 or later)
+* C# (.NET 6.0 or later)
 * NodeJS (7.6 or later)
 * Perl 5 (5.10 or later)
 * PHP (5.6.x or 7.x)

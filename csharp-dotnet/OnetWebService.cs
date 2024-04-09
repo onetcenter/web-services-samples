@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Net.Http;
 using System.Net.Http.Headers;
-using Newtonsoft.Json.Linq;
+using System.Text.Json.Nodes;
 
 public class OnetWebService
 {
@@ -51,7 +51,7 @@ public class OnetWebService
         }
     }
 
-    public async Task<JObject> Call(string path, QueryParams query = null)
+    public async Task<JsonNode> Call(string path, QueryParams query = null)
     {
         List<string> encoded_params = new List<string>();
         if (query != null)
@@ -67,23 +67,26 @@ public class OnetWebService
             url += "?" + String.Join("&", encoded_params.ToArray());
         }
 
-        JObject result = new JObject();
-        result["error"] = new JValue("Call to " + url + " failed with unknown reason");
+        JsonNode result = new JsonObject
+        {
+            ["error"] = "Call to " + url + " failed with unknown reason"
+        };
+
         try
         {
             HttpResponseMessage response = await client.GetAsync(url);
             if (response.StatusCode == (System.Net.HttpStatusCode)200 || response.StatusCode == (System.Net.HttpStatusCode)422)
             {
-                result = JObject.Parse(await response.Content.ReadAsStringAsync());
+                result = JsonNode.Parse(await response.Content.ReadAsStringAsync());
             }
             else
             {
-                result["error"] = new JValue("Call to " + url + " failed with error code " + ((int)response.StatusCode).ToString());
+                result["error"] = "Call to " + url + " failed with error code " + ((int)response.StatusCode).ToString();
             }
         }
         catch (HttpRequestException e)
         {
-            result["error"] = new JValue("Call to " + url + " failed with reason: " + e.Message);
+            result["error"] = "Call to " + url + " failed with reason: " + e.Message;
         }
 
         return result;

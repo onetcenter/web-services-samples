@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <EnableDefaultCompileItems>False</EnableDefaultCompileItems>
   </PropertyGroup>
 
@@ -14,7 +14,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="KeywordSearch.cs" />
-    <Compile Include="OnetWebService.cs" />
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <Compile Include="..\OnetWebService.cs" Link="OnetWebService.cs" />
   </ItemGroup>
 </Project>
