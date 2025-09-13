@@ -1,21 +1,14 @@
 "use strict"
-const axios = require('axios')
 const querystring = require('querystring')
 
 class OnetWebService {
   constructor(username, password) {
     this._config = {
-      method: 'get',
-      auth: {
-        username: username,
-        password: password
-      },
       headers: {
-        'User-Agent': 'nodejs-OnetWebService/1.00 (bot)',
+        'Authorization': 'Basic ' + btoa(username + ':' + password),
+        'User-Agent': 'nodejs-OnetWebService/1.10 (bot)',
         'Accept': 'application/json'
-      },
-      timeout: 10000,
-      maxRedirects: 0
+      }
     }
     this.set_version()
   }
@@ -38,23 +31,24 @@ class OnetWebService {
     
     let result = { error: 'Call to ' + config.baseURL + config.url + ' failed with unknown reason' }
     try {
-      const response = await axios(config)
-      if (response.status == 200) {
-        result = response.data
+      const response = await fetch(config.baseURL + config.url, {
+        method: 'GET',
+        headers: this._config.headers
+      })
+      if (response.status == 200 || response.status == 422) {
+        try {
+          result = await response.json()
+        } catch (e) {
+          result = { error: 'Call to ' + config.baseURL + config.url + ' failed on JSON parse' }
+        }
       } else {
         result = { error: 'Call to ' + config.baseURL + config.url + ' failed with error code ' + response.status }
       }
     } catch (error) {
-      if (error.response) {
-        if (error.response.status == 422) {
-          result = error.response.data
-        } else {
-          result = { error: 'Call to ' + config.baseURL + config.url + ' failed with error code ' + error.response.status }
-        }
-      } else if (error.request) {
-        result = { error: 'Call to ' + config.baseURL + config.url + ' failed with no response from server' }
-      } else if (error.message) {
-        result = { error: 'Call to ' + config.baseURL + config.url + 'failed with reason: ' + error.message }
+      if (error.message) {
+        result = { error: 'Call to ' + config.baseURL + config.url + ' failed with reason: ' + error.message }
+      } else {
+        result = { error: 'Call to ' + config.baseURL + config.url + ' failed with unknown reason' }
       }
     }
     return result
