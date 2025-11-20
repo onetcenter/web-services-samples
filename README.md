@@ -1,10 +1,8 @@
 # O\*NET Web Services (Version 1.9) Code Samples
 
-### Version 2.0 is currently in public beta!
+### Version 1.9 is no longer the current API version.
 
-### [services-beta.onetcenter.org](https://services-beta.onetcenter.org/)</p>
-
-If you are participating in the public beta, visit the [Version 2.0 Code Samples](https://github.com/onetcenter/web-services-v2-samples/) repository.
+If you are using the current O\*NET Web Services API, visit the [Version 2 Code Samples](https://github.com/onetcenter/web-services-v2-samples/) repository.
 
 ---
 
